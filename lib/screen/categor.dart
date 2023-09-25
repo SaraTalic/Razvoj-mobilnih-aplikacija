@@ -1,40 +1,112 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:recipe/consent/appbar.dart';
+import 'package:recipe/consent/colors.dart';
+import 'package:recipe/screen/Recipes.dart';
 
-class Category extends StatelessWidget {
-  const Category({super.key});
+class Category extends StatefulWidget {
+  const Category({Key? key}) : super(key: key);
+
+  @override
+  State<Category> createState() => _CategoryState();
+}
+
+class _CategoryState extends State<Category> {
+  List<String> categories = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadCategories();
+  }
+
+  Future<void> loadCategories() async {
+    final String data =
+        await DefaultAssetBundle.of(context).loadString('assets/kategorije.json');
+    final Map<String, dynamic> jsonData = json.decode(data);
+    final List<dynamic> kategorije = jsonData['kategorije'];
+
+    for (var item in kategorije) {
+      categories.add(item['kategorija']);
+    }
+
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: background,
       appBar: appbar(),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisExtent: 270,
-            ),
-            itemCount: 6,
-            itemBuilder: ((context, index) {
-              return Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(25),
-                    image: DecorationImage(
-                      image: AssetImage('images/${index + 1}c.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              child: Text(
+                'Kategorije',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: font,
+                  fontFamily: 'ro',
                 ),
-              );
-            }),
+              ),
+            ),
           ),
-        ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            sliver: SliverGrid(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Recipes(
+                            selectedCategory: categories[index],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 185, 185, 185),
+                            offset: Offset(1, 1),
+                            blurRadius: 15,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            categories[index],
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black, // Prilagodite boju teksta po potrebi
+                              fontFamily: 'ro',
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                childCount: categories.length,
+              ),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisExtent: 270,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,35 +1,39 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:recipe/consent/appbar.dart';
 import 'package:recipe/consent/colors.dart';
-import 'package:recipe/screen/recipe.dart';
-import 'dart:convert';
 import 'package:recipe/screen/RecipeDetail.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Recipes extends StatefulWidget {
+  final String selectedCategory;
+
+  const Recipes({Key? key, required this.selectedCategory}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Recipes> createState() => _RecipesState();
 }
 
-class _HomeState extends State<Home> {
-  int indexx = 1;
-  List category = ['All', 'Lunch', 'Dinner', 'Breakfast'];
-  List categoryname = ['dinner', 'lunch', 'dinner', 'fast'];
-  List<dynamic> food = [];
-
-  Future<List<dynamic>> loadSalads() async {
-    var data = await DefaultAssetBundle.of(context).loadString('assets/salate.json');
-    return json.decode(data)['salate'];
-  }
+class _RecipesState extends State<Recipes> {
+  List<dynamic> recipes = [];
 
   @override
   void initState() {
     super.initState();
-    loadSalads().then((salate) {
-      setState(() {
-        food = salate;
-      });
+    loadRecipes();
+  }
+
+  Future<void> loadRecipes() async {
+    final String data =
+        await DefaultAssetBundle.of(context).loadString('assets/salate.json');
+    final Map<String, dynamic> jsonData = json.decode(data);
+    final List<dynamic> salate = jsonData['salate'];
+
+    final filteredRecipes = salate
+        .where((recipe) => recipe['kategorija'] == widget.selectedCategory)
+        .toList();
+
+    setState(() {
+      recipes = filteredRecipes;
     });
   }
 
@@ -37,14 +41,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: background,
-      appBar: appbar(),
+      
+      appBar: AppBar(
+        title: Text('ju'),),
+      
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: Text(
-                'Prijedlozi mjeseca',
+                'Recepti za ${widget.selectedCategory}',
                 style: TextStyle(
                   fontSize: 20,
                   color: font,
@@ -53,9 +60,8 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-         
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
@@ -63,8 +69,9 @@ class _HomeState extends State<Home> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                RecipeDetail(food[index])),
+                          builder: (BuildContext context) =>
+                              RecipeDetail(recipes[index]),
+                        ),
                       );
                     },
                     child: Container(
@@ -100,7 +107,7 @@ class _HomeState extends State<Home> {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                      'images/${food[index]['slika']}'), // Postavljamo sliku iz JSON-a
+                                      'images/${recipes[index]['slika']}'), // Postavljamo sliku iz JSON-a
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(20),
@@ -109,7 +116,7 @@ class _HomeState extends State<Home> {
                           ),
                           SizedBox(height: 20),
                           Text(
-                            food[index]['ime'],
+                            recipes[index]['ime'],
                             style: TextStyle(
                               fontSize: 18,
                               color: font,
@@ -121,7 +128,7 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text(
-                                '100 min',
+                                '100 min', // Prilagodite ovdje
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.grey,
@@ -132,7 +139,7 @@ class _HomeState extends State<Home> {
                                 children: [
                                   Icon(Icons.star, color: maincolor, size: 15),
                                   Text(
-                                    '4.2',
+                                    '4.2', // Prilagodite ovdje
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: Colors.grey,
@@ -148,7 +155,7 @@ class _HomeState extends State<Home> {
                     ),
                   );
                 },
-                childCount: 4,
+                childCount: recipes.length,
               ),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
