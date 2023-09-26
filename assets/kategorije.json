@@ -1,1 +1,13 @@
-{"kategorije":[{"kategorija":"piletina"},{"kategorija":"ljetna"},{"kategorija":"regionalno"}]}
+{
+    "kategorije": [
+        {
+            "kategorija": "piletina"
+        },
+        {
+            "kategorija": "ljetna"
+        },
+        {
+            "kategorija": "regionalno"
+        }
+    ]
+}

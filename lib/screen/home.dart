@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/consent/appbar.dart';
 import 'package:recipe/consent/colors.dart';
-import 'package:recipe/screen/recipe.dart';
 import 'dart:convert';
 import 'package:recipe/screen/RecipeDetail.dart';
 
@@ -14,12 +13,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int indexx = 1;
-  List category = ['All', 'Lunch', 'Dinner', 'Breakfast'];
-  List categoryname = ['dinner', 'lunch', 'dinner', 'fast'];
   List<dynamic> food = [];
 
   Future<List<dynamic>> loadSalads() async {
-    var data = await DefaultAssetBundle.of(context).loadString('assets/salate.json');
+    var data =
+        await DefaultAssetBundle.of(context).loadString('assets/salate.json');
     return json.decode(data)['salate'];
   }
 
@@ -44,7 +42,7 @@ class _HomeState extends State<Home> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: Text(
-                'Prijedlozi mjeseca',
+                '#salate',
                 style: TextStyle(
                   fontSize: 20,
                   color: font,
@@ -53,7 +51,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-         
           SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             sliver: SliverGrid(
@@ -100,7 +97,7 @@ class _HomeState extends State<Home> {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                      'images/${food[index]['slika']}'), // Postavljamo sliku iz JSON-a
+                                      'images/${food[index]['slika']}'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(20),
@@ -118,31 +115,42 @@ class _HomeState extends State<Home> {
                           ),
                           SizedBox(height: 10),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
+                              SizedBox(width: 15),
+                              Image.asset(
+                                'images/calorie.png',
+                                height: 20,
+                                width: 20,
+                              ),
+//SizedBox(width: 5),
+                              // SizedBox(width: 5),
                               Text(
-                                '100 min',
+                                '${food[index]['kalorije']} kcal',
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 12,
                                   color: Colors.grey,
                                   fontFamily: 'ro',
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  Icon(Icons.star, color: maincolor, size: 15),
-                                  Text(
-                                    '4.2',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey,
-                                      fontFamily: 'ro',
-                                    ),
-                                  ),
-                                ],
-                              )
+                              SizedBox(width: 10),
+                              Image.asset(
+                                'images/clock.png',
+                                height: 16,
+                                width: 16,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                '${food[index]['vrijeme']} min',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                  fontFamily: 'ro',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),

@@ -1,1 +1,48 @@
-{"salate":[{"id":"1","ime":"Cezar salata","slika":"cezar.jpg","opis":"1. Operite i osu\u0161ite zelenu salatu, pa je nasjeckajte na manje komade i stavite u veliku ciniju.\r\n\r\n   2. Piletinu posolite i pobiberite po ukusu. Zagrijte malo maslinovog ulja u tiganju na srednje jakoj vatri. Dodajte pile\u0107e filete i pr\u017eite ih sa svake strane dok ne postanu zlatno sme\u0111i i potpuno skuvani (oko 5-7 minuta sa svake strane). Kada su gotovi, ostavite ih da se ohlade nekoliko minuta, a zatim nasjeckajte na tanke trake.\r\n\r\n   3. Za dresing, u manjoj \u010diniji pome\u0161ajte majonez, senf, maslinovo ulje, sok od limuna, rendani parmezan, sitno seckani beli luk, so i biber. Dobro prome\u0161ajte sve sastojke dok ne dobijete homogenu smesu.\r\n\r\n   4. Tostrirajte hleb i isecite ga na kocke ili trake.\r\n\r\n   5. Na preostalu zelenu salatu dodajte pile\u0107e trake i tostirani hleb.\r\n\r\n   6. Prelijte salatu pripremljenim dresingom i dobro prome\u0161ajte tako da se svi sastojci ravnomerno prekriju dresingom.\r\n\r\n   7. Na kraju, pospite rendanim parmezanom preko salate.\r\n\r\nCezar salata je sada spremna za serviranje! U\u017eivajte u ovom ukusnom obroku.","sastojci":"zelena salata,piletina,hljeb,parmezan,maslinovo ulje,majonez,sen","kolicine":"Za salatu:\r\n\r\n    1 glavica zelene salate\r\n    2 pile\u0107a fileta (oko 200g svaki)\r\n    2 kri\u0161ke tostiranog hleba\r\n    1\/2 \u0161olje parmezana \r\n    1\/4 \u0161olje maslinovog ulja\r\n    1 \u010den belog luka \r\n    So i biber po ukusu\r\n\r\nZa dresing:\r\n\r\n    1\/4 \u0161olje majoneza\r\n    1 ka\u0161ika senfa\r\n    1 ka\u0161ika maslinovog ulja\r\n    2 ka\u0161ike soka od limuna\r\n    1 ka\u0161ika rendanog parmezana\r\n    So i biber po ukusu","kalorije":"350","vrijeme":"20","kategorija":"piletina"},{"id":"2","ime":"Gr\u010dka salata","slika":"grcka.jpg","opis":"1. Isecite sve\u017ei krastavac, paradajz i crni luk na tanke kri\u0161ke i stavite ih u \u010diniju.\r\n\r\n   2. Dodajte maslinke i feta sir, i pospite sa malo maslinovog ulja.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\n   4. Za dodatni ukus, mo\u017eete dodati malo maslina i origana.\r\n\r\nGr\u010dka salata je sada spremna za serviranje! U\u017eivajte u ovom originalnom gr\u010dkom ukusu.","sastojci":"krastavac,paradajz,crni luk,masline,feta sir,maslinovo ulje,orig","kolicine":"1 krastavac, 2 paradajza, 1 crni luk, 1\/2 \u0161olje maslinki, 100g feta sira, 2 ka\u0161ike maslinovog ulja, masline i origano po ukusu","kalorije":"300","vrijeme":"15","kategorija":"ljetna"},{"id":"3","ime":"Caprese salata","slika":"caprese.jpg","opis":"1. Isecite redom paradajz, bufalo mocarelu i sve\u017ee bosiljak listove na tanke kri\u0161ke.\r\n\r\n   2. Redom aran\u017eirajte na tanjir i pospite sa balzamikom i maslinovim uljem.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\nCaprese salata je sada spremna za serviranje! U\u017eivajte u njenom osve\u017eavaju\u0107em ukusu.","sastojci":"paradajz,mocarela,bosiljak,balzamiko,maslinovo ulje","kolicine":"2 paradajza, 200g bufalo mocarele, sve\u017ei bosiljak, 2 ka\u0161ike balzamika, 2 ka\u0161ike maslinovog ulja","kalorije":"250","vrijeme":"10","kategorija":"ljetna"},{"id":"4","ime":"\u0160opska salata","slika":"sopska.jpg","opis":"1. Isecite sve\u017ei krastavac, paradajz i crni luk na male kocke i stavite ih u \u010diniju.\r\n\r\n   2. Dodajte malo kajmaka i pospite sa soli i suvom mentom.\r\n\r\n   3. Prelijte sa malo vinaigrette-a i prome\u0161ajte.\r\n\r\n\u0160opska salata je sada spremna za serviranje! U\u017eivajte u ovoj tradicionalnoj makedonskoj salati.","sastojci":"krastavac,paradajz,crni luk,kajmak,so,menta","kolicine":"1 krastavac, 2 paradajza,1 crni luk, 100g kajmaka, so, suva menta","kalorije":"200","vrijeme":"15","kategorija":"regionalno"}]}
+{
+    "salate": [
+        {
+            "id": "1",
+            "ime": "Cezar salata",
+            "slika": "cezar.jpg",
+            "opis": "1. Operite i osu\u0161ite zelenu salatu, pa je nasjeckajte na manje komade i stavite u veliku ciniju.\r\n\r\n   2. Piletinu posolite i pobiberite po ukusu. Zagrijte malo maslinovog ulja u tiganju na srednje jakoj vatri. Dodajte pile\u0107e filete i pr\u017eite ih sa svake strane dok ne postanu zlatno sme\u0111i i potpuno skuvani (oko 5-7 minuta sa svake strane). Kada su gotovi, ostavite ih da se ohlade nekoliko minuta, a zatim nasjeckajte na tanke trake.\r\n\r\n   3. Za dresing, u manjoj \u010diniji pome\u0161ajte majonez, senf, maslinovo ulje, sok od limuna, rendani parmezan, sitno seckani beli luk, so i biber. Dobro prome\u0161ajte sve sastojke dok ne dobijete homogenu smesu.\r\n\r\n   4. Tostrirajte hleb i isecite ga na kocke ili trake.\r\n\r\n   5. Na preostalu zelenu salatu dodajte pile\u0107e trake i tostirani hleb.\r\n\r\n   6. Prelijte salatu pripremljenim dresingom i dobro prome\u0161ajte tako da se svi sastojci ravnomerno prekriju dresingom.\r\n\r\n   7. Na kraju, pospite rendanim parmezanom preko salate.\r\n\r\nCezar salata je sada spremna za serviranje! U\u017eivajte u ovom ukusnom obroku.",
+            "sastojci": "zelena salata,piletina,hljeb,parmezan,maslinovo ulje,majonez,sen",
+            "kolicine": "Za salatu:\r\n\r\n    1 glavica zelene salate\r\n    2 pile\u0107a fileta (oko 200g svaki)\r\n    2 kri\u0161ke tostiranog hleba\r\n    1\/2 \u0161olje parmezana \r\n    1\/4 \u0161olje maslinovog ulja\r\n    1 \u010den belog luka \r\n    So i biber po ukusu\r\n\r\nZa dresing:\r\n\r\n    1\/4 \u0161olje majoneza\r\n    1 ka\u0161ika senfa\r\n    1 ka\u0161ika maslinovog ulja\r\n    2 ka\u0161ike soka od limuna\r\n    1 ka\u0161ika rendanog parmezana\r\n    So i biber po ukusu",
+            "kalorije": "350",
+            "vrijeme": "20",
+            "kategorija": "piletina"
+        },
+        {
+            "id": "2",
+            "ime": "Gr\u010dka salata",
+            "slika": "grcka.jpg",
+            "opis": "1. Isecite sve\u017ei krastavac, paradajz i crni luk na tanke kri\u0161ke i stavite ih u \u010diniju.\r\n\r\n   2. Dodajte maslinke i feta sir, i pospite sa malo maslinovog ulja.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\n   4. Za dodatni ukus, mo\u017eete dodati malo maslina i origana.\r\n\r\nGr\u010dka salata je sada spremna za serviranje! U\u017eivajte u ovom originalnom gr\u010dkom ukusu.",
+            "sastojci": "krastavac,paradajz,crni luk,masline,feta sir,maslinovo ulje,orig",
+            "kolicine": "1 krastavac, 2 paradajza, 1 crni luk, 1\/2 \u0161olje maslinki, 100g feta sira, 2 ka\u0161ike maslinovog ulja, masline i origano po ukusu",
+            "kalorije": "300",
+            "vrijeme": "15",
+            "kategorija": "ljetna"
+        },
+        {
+            "id": "3",
+            "ime": "Caprese salata",
+            "slika": "caprese.jpg",
+            "opis": "1. Isecite redom paradajz, bufalo mocarelu i sve\u017ee bosiljak listove na tanke kri\u0161ke.\r\n\r\n   2. Redom aran\u017eirajte na tanjir i pospite sa balzamikom i maslinovim uljem.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\nCaprese salata je sada spremna za serviranje! U\u017eivajte u njenom osve\u017eavaju\u0107em ukusu.",
+            "sastojci": "paradajz,mocarela,bosiljak,balzamiko,maslinovo ulje",
+            "kolicine": "2 paradajza, 200g bufalo mocarele, sve\u017ei bosiljak, 2 ka\u0161ike balzamika, 2 ka\u0161ike maslinovog ulja",
+            "kalorije": "250",
+            "vrijeme": "10",
+            "kategorija": "ljetna"
+        },
+        {
+            "id": "4",
+            "ime": "\u0160opska salata",
+            "slika": "sopska.jpg",
+            "opis": "1. Isecite sve\u017ei krastavac, paradajz i crni luk na male kocke i stavite ih u \u010diniju.\r\n\r\n   2. Dodajte malo kajmaka i pospite sa soli i suvom mentom.\r\n\r\n   3. Prelijte sa malo vinaigrette-a i prome\u0161ajte.\r\n\r\n\u0160opska salata je sada spremna za serviranje! U\u017eivajte u ovoj tradicionalnoj makedonskoj salati.",
+            "sastojci": "krastavac,paradajz,crni luk,kajmak,so,menta",
+            "kolicine": "1 krastavac, 2 paradajza,1 crni luk, 100g kajmaka, so, suva menta",
+            "kalorije": "200",
+            "vrijeme": "15",
+            "kategorija": "regionalno"
+        }
+    ]
+}

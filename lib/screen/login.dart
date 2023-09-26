@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:recipe/consent/colors.dart';
 import 'package:recipe/consent/navigation.dart';
@@ -17,7 +18,7 @@ class Login extends StatelessWidget {
             SizedBox(height: 120),
             Center(
               child: Text(
-                'Login',
+                'Prijava',
                 style: TextStyle(
                   color: font,
                   fontFamily: 'ro',
@@ -62,7 +63,7 @@ class Login extends StatelessWidget {
                   obscuringCharacter: '*',
                   decoration: InputDecoration(
                     icon: Icon(Icons.lock),
-                    hintText: 'password',
+                    hintText: 'lozinka',
                     hintStyle: TextStyle(fontFamily: 'ro'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -87,7 +88,7 @@ class Login extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Text(
-                  'Login',
+                  'Prijavi se',
                   style: TextStyle(
                     color: Colors.white,
                     fontFamily: 'ro',
@@ -119,7 +120,7 @@ class Login extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      'Sign up',
+                      'Registruj se',
                       style: TextStyle(
                         fontFamily: 'ro',
                         color: font,
@@ -152,7 +153,7 @@ class Login extends StatelessWidget {
                               children: [
                                 SizedBox(height: 50),
                                 Text(
-                                  'Sign up',
+                                  'Registracija',
                                   style: TextStyle(
                                     fontFamily: 'ro',
                                     color: font,
@@ -197,7 +198,7 @@ class Login extends StatelessWidget {
                                     child: TextField(
                                       decoration: InputDecoration(
                                         icon: Icon(Icons.person),
-                                        hintText: 'User Name',
+                                        hintText: 'Koriscnicko ime',
                                         hintStyle: TextStyle(fontFamily: 'ro'),
                                         border: OutlineInputBorder(
                                           borderRadius:
@@ -223,7 +224,7 @@ class Login extends StatelessWidget {
                                       obscuringCharacter: '*',
                                       decoration: InputDecoration(
                                         icon: Icon(Icons.lock),
-                                        hintText: 'password',
+                                        hintText: 'lozinka',
                                         hintStyle: TextStyle(fontFamily: 'ro'),
                                         border: OutlineInputBorder(
                                           borderRadius:
@@ -251,7 +252,7 @@ class Login extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                     child: Text(
-                                      'Sign up',
+                                      'Registruj se',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'ro',
@@ -277,3 +278,4 @@ class Login extends StatelessWidget {
     );
   }
 }
+

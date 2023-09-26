@@ -41,17 +41,16 @@ class _RecipesState extends State<Recipes> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: background,
-      
       appBar: AppBar(
-        title: Text('ju'),),
-      
+        title: Text(''),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: Text(
-                'Recepti za ${widget.selectedCategory}',
+                '# ${widget.selectedCategory}',
                 style: TextStyle(
                   fontSize: 20,
                   color: font,
@@ -107,7 +106,7 @@ class _RecipesState extends State<Recipes> {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                      'images/${recipes[index]['slika']}'), // Postavljamo sliku iz JSON-a
+                                      'images/${recipes[index]['slika']}'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(20),
@@ -125,31 +124,42 @@ class _RecipesState extends State<Recipes> {
                           ),
                           SizedBox(height: 10),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
+                              SizedBox(width: 15),
+                              Image.asset(
+                                'images/calorie.png',
+                                height: 20,
+                                width: 20,
+                              ),
+//SizedBox(width: 5),
+                              // SizedBox(width: 5),
                               Text(
-                                '100 min', // Prilagodite ovdje
+                                recipes[index]['kalorije'] + ' kcal',
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 12,
                                   color: Colors.grey,
                                   fontFamily: 'ro',
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  Icon(Icons.star, color: maincolor, size: 15),
-                                  Text(
-                                    '4.2', // Prilagodite ovdje
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.grey,
-                                      fontFamily: 'ro',
-                                    ),
-                                  ),
-                                ],
-                              )
+                              SizedBox(width: 10),
+                              Image.asset(
+                                'images/clock.png',
+                                height: 16,
+                                width: 16,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                recipes[index]['vrijeme'] + ' min',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                  fontFamily: 'ro',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),

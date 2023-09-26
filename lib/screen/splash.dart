@@ -14,11 +14,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
-      logo: Image.asset('images/icon.png'),
+      logo: Image.asset('images/ikona.png'),
       title: Text(
-        'Flutter Skills',
+        '#VrijemeZaSalatu',
         style: TextStyle(
-          color: Colors.pink,
+          color: Color.fromARGB(255, 10, 10, 10),
           fontFamily: 'ro',
           fontSize: 19,
           fontWeight: FontWeight.bold,
@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
       ),
       backgroundColor: background,
       showLoader: true,
-      loaderColor: Colors.pink,
+      loaderColor: Color.fromARGB(255, 52, 125, 63),
       navigator: Login(),
       durationInSeconds: 3,
     );
