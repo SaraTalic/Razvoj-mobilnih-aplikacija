@@ -1,1 +1,1 @@
-
+predmet: Razvoj mobilnih aplikacija
