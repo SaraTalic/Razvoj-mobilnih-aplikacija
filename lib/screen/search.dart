@@ -30,25 +30,23 @@ class _SearchState extends State<Search> {
   }
 
   double calculateMatchPercentage(String searchText, String recipeIngredients) {
-    List<String> searchIngredients =
-        searchText.toLowerCase().split(','); // Sastojke odvojene zarezima
-    List<String> recipeIngredientsList =
-        recipeIngredients.toLowerCase().split(',');
+  List<String> searchIngredients =
+      searchText.toLowerCase().split(',').map((s) => s.trim()).toList();
+  List<String> recipeIngredientsList =
+      recipeIngredients.toLowerCase().split(',').map((s) => s.trim()).toList();
 
-    int totalIngredients = searchIngredients.length;
-    int matchedIngredients = 0;
+  int totalIngredients = searchIngredients.length;
+  int matchedIngredients = 0;
 
-    for (String searchIngredient in searchIngredients) {
-      for (String recipeIngredient in recipeIngredientsList) {
-        if (recipeIngredient.trim().contains(searchIngredient.trim())) {
-          matchedIngredients++;
-          break; // Prekidamo unutarnju petlju jer smo pronašli podudaranje
-        }
-      }
+  for (String searchIngredient in searchIngredients) {
+    if (recipeIngredientsList.contains(searchIngredient)) {
+      matchedIngredients++;
     }
-
-    return (matchedIngredients / totalIngredients) * 100;
   }
+
+  return (matchedIngredients / totalIngredients) * 100;
+}
+
 
   void performSearch(String searchText) {
     if (searchText.isEmpty) {
@@ -61,10 +59,9 @@ class _SearchState extends State<Search> {
     searchResults = food
         .where((recipe) =>
             calculateMatchPercentage(
-              searchText.toLowerCase(),
-              recipe['sastojci'],
-            ) >
-            0.0) // da bi se uključili svi sa barem jednim istim
+                  searchText.toLowerCase(),
+                  recipe['sastojci'],
+                ) > 0.0)
         .toList();
 
     // Sortiranje rezultata prema postotku
@@ -109,10 +106,6 @@ class _SearchState extends State<Search> {
                   ),
                   child: TextField(
                     controller: searchController,
-                    onChanged: (text) {
-                      // Ovdje obavljamo pretragu kako korisnik upisuje tekst
-                      performSearch(text);
-                    },
                     onSubmitted: (text) {
                       // Ovdje obavljamo pretragu kada korisnik pritisne Enter
                       performSearch(text);
@@ -206,8 +199,6 @@ class _SearchState extends State<Search> {
                                       height: 20,
                                       width: 20,
                                     ),
-//SizedBox(width: 5),
-                                    // SizedBox(width: 5),
                                     Text(
                                       '${recipe['kalorije']} kcal',
                                       style: TextStyle(
