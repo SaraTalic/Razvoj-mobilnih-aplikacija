@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/consent/colors.dart';
-import 'package:recipe/screen/categor.dart';
-import 'package:recipe/screen/faverite.dart';
+import 'package:recipe/screen/category.dart';
+import 'package:recipe/screen/favorite.dart';
 import 'package:recipe/screen/home.dart';
 import 'package:recipe/screen/profile.dart';
 import 'package:recipe/screen/search.dart';
@@ -15,7 +15,7 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
   int index = 0;
-  List screen = [Home(), Category(), Search(), favorite(), Profil()];
+  List screen = [Home(), Category(), Search(), Favorite(), Profil()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

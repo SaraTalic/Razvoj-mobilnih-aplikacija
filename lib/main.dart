@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:recipe/consent/navigation.dart';
 import 'package:recipe/screen/home.dart';
 import 'package:recipe/screen/splash.dart';
+import 'package:recipe/consent/UserProvider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      ChangeNotifierProvider(
+      create: (context) => UserProvider(), // Dodajte ovu liniju za pravljenje UserProvider
+      child: const MyApp(),
+    ),);
 }
 
 class MyApp extends StatelessWidget {

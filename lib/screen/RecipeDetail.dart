@@ -1,13 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/screen/home.dart';
+import 'package:recipe/consent/UserProvider.dart';
+import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 
-class RecipeDetail extends StatelessWidget {
+class RecipeDetail extends StatefulWidget {
   final Map<String, dynamic> recipe;
 
   RecipeDetail(this.recipe);
 
   @override
+  _RecipeDetailState createState() => _RecipeDetailState();
+}
+
+class _RecipeDetailState extends State<RecipeDetail> {
+  bool isFavorite = false;
+  Color favoriteColor = Colors.yellow;
+  Color notFavoriteColor = Colors.grey;
+  Color starColor = Colors.grey;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkIfFavorite();
+  }
+
+  Future<void> _checkIfFavorite() async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final userName = userProvider.userName;
+
+    final url = 'http://192.168.100.57/phpsalate/favorite/isFS.php';
+
+    final response = await http.post(
+      Uri.parse(url),
+      body: {
+        'username': userName!,
+        'id_salate': widget.recipe['id'].toString(),
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final responseData = response.body;
+      setState(() {
+        isFavorite = responseData == 'Yes';
+        starColor = isFavorite ? favoriteColor : notFavoriteColor;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final userName = userProvider.userName;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -19,7 +64,7 @@ class RecipeDetail extends StatelessWidget {
               expandedHeight: 400,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  'images/${recipe['slika']}',
+                  'images/${widget.recipe['slika']}',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -50,13 +95,24 @@ class RecipeDetail extends StatelessWidget {
               actions: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: CircleAvatar(
-                    backgroundColor: Color.fromRGBO(250, 250, 250, 0.6),
-                    radius: 18,
-                    child: Icon(
-                      Icons.favorite_border,
-                      size: 25,
-                      color: Colors.grey,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isFavorite = !isFavorite;
+                        starColor =
+                            isFavorite ? favoriteColor : notFavoriteColor;
+                      });
+                      _updateFavoriteStatus(
+                          userName!, int.parse(widget.recipe['id']));
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: Color.fromRGBO(250, 250, 250, 0.6),
+                      radius: 18,
+                      child: Icon(
+                        isFavorite ? Icons.star : Icons.star_border,
+                        size: 25,
+                        color: starColor,
+                      ),
                     ),
                   ),
                 ),
@@ -68,13 +124,7 @@ class RecipeDetail extends StatelessWidget {
                   radius: 18,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pop(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return Home();
-                          },
-                        ),
-                      );
+                      Navigator.of(context).pop();
                     },
                     child: Icon(
                       Icons.arrow_back,
@@ -108,7 +158,7 @@ class RecipeDetail extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      recipe['ime'],
+                      widget.recipe['ime'],
                       style: TextStyle(
                         fontSize: 30,
                         color: const Color.fromARGB(255, 17, 17, 17),
@@ -130,7 +180,7 @@ class RecipeDetail extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      '${recipe['kalorije']} kalorija',
+                      '${widget.recipe['kalorije']} kalorija',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.grey,
@@ -146,7 +196,7 @@ class RecipeDetail extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      '${recipe['vrijeme']} minuta',
+                      '${widget.recipe['vrijeme']} minuta',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.grey,
@@ -157,8 +207,8 @@ class RecipeDetail extends StatelessWidget {
                   ],
                 ),
               ),
-              _buildExpansionTile('Sastojci', recipe['kolicine']),
-              _buildExpansionTile('Priprema', recipe['opis']),
+              _buildExpansionTile('Sastojci', widget.recipe['kolicine']),
+              _buildExpansionTile('Priprema', widget.recipe['opis']),
             ],
           ),
         ),
@@ -200,5 +250,32 @@ class RecipeDetail extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _updateFavoriteStatus(String userName, int recipeId) async {
+    final url = 'http://192.168.100.57/phpsalate/favorite/updateFS.php';
+
+    final response = await http.post(
+      Uri.parse(url),
+      body: {
+        'username': userName,
+        'id_salate': recipeId.toString(),
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final responseData = response.body;
+      if (responseData == 'Success') {
+        print('Recept je uspješno dodan ili uklonjen iz omiljenih.');
+        setState(() {
+          isFavorite = !isFavorite;
+          starColor = isFavorite ? favoriteColor : notFavoriteColor;
+        });
+      } else if (responseData == 'Error') {
+        print('Greška pri dodavanja ili uklanjanja recepta iz omiljenih.');
+      }
+    } else {
+      print('Greska.');
+    }
   }
 }

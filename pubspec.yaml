@@ -31,6 +31,8 @@ dependencies:
     sdk: flutter
   easy_splash_screen: ^1.0.4
   http: ^1.1.0
+  fluttertoast: ^8.2.2
+  provider: ^5.0.0
 
 
   

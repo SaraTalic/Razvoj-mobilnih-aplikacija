@@ -1,34 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 import 'package:recipe/consent/appbar.dart';
 import 'package:recipe/consent/colors.dart';
-import 'dart:convert';
 import 'package:recipe/screen/RecipeDetail.dart';
+import 'package:provider/provider.dart';
+import 'package:recipe/consent/UserProvider.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Favorite extends StatefulWidget {
+  const Favorite({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Favorite> createState() => _FavoriteState();
 }
 
-class _HomeState extends State<Home> {
-  int indexx = 1;
-  List<dynamic> food = [];
+class _FavoriteState extends State<Favorite> {
+  List<String> favoriteSaladIds = [];
 
-  Future<List<dynamic>> loadSalads() async {
-    var data =
-        await DefaultAssetBundle.of(context).loadString('assets/salate.json');
-    return json.decode(data)['salate'];
-  }
+  List<Map<String, dynamic>> saladsData = [];
 
   @override
   void initState() {
     super.initState();
-    loadSalads().then((salate) {
+    _loadFavoriteSalads();
+  }
+
+  Future<void> _loadFavoriteSalads() async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    final userName = userProvider.userName;
+
+    final url = 'http://192.168.100.57/phpsalate/favorite/getFS.php';
+
+    final response = await http.post(
+      Uri.parse(url),
+      body: {
+        'username': userName!,
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final List<dynamic> responseData = json.decode(response.body);
+
       setState(() {
-        food = salate;
+        favoriteSaladIds = responseData.map((id) => id.toString()).toList();
       });
-    });
+
+      final saladsJsonData =
+          await DefaultAssetBundle.of(context).loadString('assets/salate.json');
+      final saladsJson = json.decode(saladsJsonData);
+      final List<dynamic> saladsList = saladsJson['salate'];
+
+      final Map<String, Map<String, dynamic>> saladsMap = {};
+      for (var salad in saladsList) {
+        saladsMap[salad['id']] = salad;
+      }
+
+      setState(() {
+        saladsData = favoriteSaladIds
+            .map((id) => saladsMap[id])
+            .where((salad) => salad != null)
+            .map((salad) => salad!)
+            .toList();
+      });
+    } else {
+      // fali da dodam ako je greska
+    }
   }
 
   @override
@@ -42,7 +78,7 @@ class _HomeState extends State<Home> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: Text(
-                '#salate',
+                'Omiljene salate',
                 style: TextStyle(
                   fontSize: 20,
                   color: font,
@@ -56,12 +92,15 @@ class _HomeState extends State<Home> {
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
+                  final salad = saladsData[index];
+
                   return GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                RecipeDetail(food[index])),
+                          builder: (BuildContext context) =>
+                              RecipeDetail(salad),
+                        ),
                       );
                     },
                     child: Container(
@@ -81,6 +120,12 @@ class _HomeState extends State<Home> {
                           SizedBox(height: 10),
                           Padding(
                             padding: const EdgeInsets.only(right: 14),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Icon(Icons.star, color: Colors.yellow)
+                              ],
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
@@ -92,8 +137,7 @@ class _HomeState extends State<Home> {
                               width: 120,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                      'images/${food[index]['slika']}'),
+                                  image: AssetImage('images/${salad['slika']}'),
                                   fit: BoxFit.cover,
                                 ),
                                 borderRadius: BorderRadius.circular(20),
@@ -102,7 +146,7 @@ class _HomeState extends State<Home> {
                           ),
                           SizedBox(height: 20),
                           Text(
-                            food[index]['ime'],
+                            salad['ime'],
                             style: TextStyle(
                               fontSize: 18,
                               color: font,
@@ -118,10 +162,9 @@ class _HomeState extends State<Home> {
                                 height: 20,
                                 width: 20,
                               ),
-//SizedBox(width: 5),
-                              // SizedBox(width: 5),
+                              SizedBox(width: 5),
                               Text(
-                                '${food[index]['kalorije']} kcal',
+                                '${salad['kalorije']} kcal',
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey,
@@ -137,7 +180,7 @@ class _HomeState extends State<Home> {
                               ),
                               SizedBox(width: 5),
                               Text(
-                                '${food[index]['vrijeme']} min',
+                                '${salad['vrijeme']} min',
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey,
@@ -152,7 +195,7 @@ class _HomeState extends State<Home> {
                     ),
                   );
                 },
-                childCount: food.length,
+                childCount: saladsData.length,
               ),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

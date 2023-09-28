@@ -8,9 +8,16 @@ PreferredSizeWidget appbar() {
     actions: [
       Padding(
         padding: const EdgeInsets.only(right: 15),
-        child: CircleAvatar(
-          radius: 18,
-          backgroundImage: AssetImage('images/user.png'),
+        child: Container(
+          width: 36, 
+          height: 36, 
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: AssetImage('images/ikona.png'), 
+              //fit: BoxFit.cover,
+            ),
+          ),
         ),
       ),
     ],

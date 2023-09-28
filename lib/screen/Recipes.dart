@@ -90,10 +90,7 @@ class _RecipesState extends State<Recipes> {
                           SizedBox(height: 10),
                           Padding(
                             padding: const EdgeInsets.only(right: 14),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [Icon(Icons.favorite_border)],
-                            ),
+                            
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
