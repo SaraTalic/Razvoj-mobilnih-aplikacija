@@ -112,7 +112,7 @@ class _SearchState extends State<Search> {
                     },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Unesi sastojke koje imas',
+                      hintText: 'Unesi sastojke koje imaš',
                       icon: Icon(Icons.search),
                     ),
                   ),

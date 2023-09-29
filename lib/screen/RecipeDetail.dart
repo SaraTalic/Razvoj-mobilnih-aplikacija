@@ -164,6 +164,7 @@ class _RecipeDetailState extends State<RecipeDetail> {
                         color: const Color.fromARGB(255, 17, 17, 17),
                         fontFamily: 'ro',
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),

@@ -1,48 +1,113 @@
-{
-    "salate": [
-        {
-            "id": "1",
-            "ime": "Cezar salata",
-            "slika": "cezar.jpg",
-            "opis": "1. Operite i osu\u0161ite zelenu salatu, pa je nasjeckajte na manje komade i stavite u veliku ciniju.\r\n\r\n   2. Piletinu posolite i pobiberite po ukusu. Zagrijte malo maslinovog ulja u tiganju na srednje jakoj vatri. Dodajte pile\u0107e filete i pr\u017eite ih sa svake strane dok ne postanu zlatno sme\u0111i i potpuno skuvani (oko 5-7 minuta sa svake strane). Kada su gotovi, ostavite ih da se ohlade nekoliko minuta, a zatim nasjeckajte na tanke trake.\r\n\r\n   3. Za dresing, u manjoj \u010diniji pome\u0161ajte majonez, senf, maslinovo ulje, sok od limuna, rendani parmezan, sitno seckani beli luk, so i biber. Dobro prome\u0161ajte sve sastojke dok ne dobijete homogenu smesu.\r\n\r\n   4. Tostrirajte hleb i isecite ga na kocke ili trake.\r\n\r\n   5. Na preostalu zelenu salatu dodajte pile\u0107e trake i tostirani hleb.\r\n\r\n   6. Prelijte salatu pripremljenim dresingom i dobro prome\u0161ajte tako da se svi sastojci ravnomerno prekriju dresingom.\r\n\r\n   7. Na kraju, pospite rendanim parmezanom preko salate.\r\n\r\nCezar salata je sada spremna za serviranje! U\u017eivajte u ovom ukusnom obroku.",
-            "sastojci": "zelena salata,piletina,hljeb,parmezan,maslinovo ulje,majoneza,senf",
-            "kolicine": "Za salatu:\r\n\r\n    1 glavica zelene salate\r\n    2 pile\u0107a fileta (oko 200g svaki)\r\n    2 kri\u0161ke tostiranog hleba\r\n    1\/2 \u0161olje parmezana \r\n    1\/4 \u0161olje maslinovog ulja\r\n    1 \u010den belog luka \r\n    So i biber po ukusu\r\n\r\nZa dresing:\r\n\r\n    1\/4 \u0161olje majoneza\r\n    1 ka\u0161ika senfa\r\n    1 ka\u0161ika maslinovog ulja\r\n    2 ka\u0161ike soka od limuna\r\n    1 ka\u0161ika rendanog parmezana\r\n    So i biber po ukusu",
-            "kalorije": "350",
-            "vrijeme": "20",
-            "kategorija": "piletina"
-        },
-        {
-            "id": "2",
-            "ime": "Gr\u010dka salata",
-            "slika": "grcka.jpg",
-            "opis": "1. Isecite sve\u017ei krastavac, paradajz i crni luk na tanke kri\u0161ke i stavite ih u \u010diniju.\r\n\r\n   2. Dodajte maslinke i feta sir, i pospite sa malo maslinovog ulja.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\n   4. Za dodatni ukus, mo\u017eete dodati malo maslina i origana.\r\n\r\nGr\u010dka salata je sada spremna za serviranje! U\u017eivajte u ovom originalnom gr\u010dkom ukusu.",
-            "sastojci": "krastavac,paradajz,crni luk,masline,feta sir,maslinovo ulje,orig",
-            "kolicine": "1 krastavac, 2 paradajza, 1 crni luk, 1\/2 \u0161olje maslinki, 100g feta sira, 2 ka\u0161ike maslinovog ulja, masline i origano po ukusu",
-            "kalorije": "300",
-            "vrijeme": "15",
-            "kategorija": "ljetna"
-        },
-        {
-            "id": "3",
-            "ime": "Caprese salata",
-            "slika": "caprese.jpg",
-            "opis": "1. Isecite redom paradajz, bufalo mocarelu i sve\u017ee bosiljak listove na tanke kri\u0161ke.\r\n\r\n   2. Redom aran\u017eirajte na tanjir i pospite sa balzamikom i maslinovim uljem.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\nCaprese salata je sada spremna za serviranje! U\u017eivajte u njenom osve\u017eavaju\u0107em ukusu.",
-            "sastojci": "paradajz,mocarela,bosiljak,balzamiko,maslinovo ulje",
-            "kolicine": "2 paradajza, 200g bufalo mocarele, sve\u017ei bosiljak, 2 ka\u0161ike balzamika, 2 ka\u0161ike maslinovog ulja",
-            "kalorije": "250",
-            "vrijeme": "10",
-            "kategorija": "ljetna"
-        },
-        {
-            "id": "4",
-            "ime": "\u0160opska salata",
-            "slika": "sopska.jpg",
-            "opis": "1. Isecite sve\u017ei krastavac, paradajz i crni luk na male kocke i stavite ih u \u010diniju.\r\n\r\n   2. Dodajte malo kajmaka i pospite sa soli i suvom mentom.\r\n\r\n   3. Prelijte sa malo vinaigrette-a i prome\u0161ajte.\r\n\r\n\u0160opska salata je sada spremna za serviranje! U\u017eivajte u ovoj tradicionalnoj makedonskoj salati.",
-            "sastojci": "krastavac,paradajz,crni luk,kajmak,so,menta",
-            "kolicine": "1 krastavac, 2 paradajza,1 crni luk, 100g kajmaka, so, suva menta",
-            "kalorije": "200",
-            "vrijeme": "15",
-            "kategorija": "regionalno"
-        }
-    ]
+{ "salate": [
+    {
+        "id": "1",
+        "ime": "Cezar salata",
+        "slika": "cezar.jpg",
+        "opis": "1. Operite i osušite zelenu salatu, pa je nasjeckajte na manje komade i stavite u veliku ciniju.\r\n\r\n   2. Piletinu posolite i pobiberite po ukusu. Zagrijte malo maslinovog ulja u tiganju na srednje jakoj vatri. Dodajte pileće filete i pržite ih sa svake strane dok ne postanu zlatno smeđi i potpuno skuvani (oko 5-7 minuta sa svake strane). Kada su gotovi, ostavite ih da se ohlade nekoliko minuta, a zatim nasjeckajte na tanke trake.\r\n\r\n   3. Za dresing, u manjoj činiji pomešajte majonez, senf, maslinovo ulje, sok od limuna, rendani parmezan, sitno seckani beli luk, so i biber. Dobro promešajte sve sastojke dok ne dobijete homogenu smesu.\r\n\r\n   4. Tostrirajte hleb i isecite ga na kocke ili trake.\r\n\r\n   5. Na preostalu zelenu salatu dodajte pileće trake i tostirani hleb.\r\n\r\n   6. Prelijte salatu pripremljenim dresingom i dobro promešajte tako da se svi sastojci ravnomerno prekriju dresingom.\r\n\r\n   7. Na kraju, pospite rendanim parmezanom preko salate.\r\n\r\nCezar salata je sada spremna za serviranje! Uživajte u ovom ukusnom obroku.",
+        "sastojci": "zelena salata,piletina,hljeb,parmezan,maslinovo ulje,majonez,sen",
+        "kolicine": "Za salatu:\r\n\r\n    1 glavica zelene salate\r\n    2 pileća fileta (oko 200g svaki)\r\n    2 kriške tostiranog hleba\r\n    1/2 šolje parmezana \r\n    1/4 šolje maslinovog ulja\r\n    1 čen belog luka \r\n    So i biber po ukusu\r\n\r\nZa dresing:\r\n\r\n    1/4 šolje majoneza\r\n    1 kašika senfa\r\n    1 kašika maslinovog ulja\r\n    2 kašike soka od limuna\r\n    1 kašika rendanog parmezana\r\n    So i biber po ukusu",
+        "kalorije": "350",
+        "vrijeme": "20",
+        "kategorija": "piletina"
+    },
+    {
+        "id": "2",
+        "ime": "Grčka salata",
+        "slika": "grcka.jpg",
+        "opis": "1. Isecite sveži krastavac, paradajz i crni luk na tanke kriške i stavite ih u činiju.\r\n\r\n   2. Dodajte maslinke i feta sir, i pospite sa malo maslinovog ulja.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\n   4. Za dodatni ukus, možete dodati malo maslina i origana.\r\n\r\nGrčka salata je sada spremna za serviranje! Uživajte u ovom originalnom grčkom ukusu.",
+        "sastojci": "krastavac,paradajz,crni luk,masline,feta sir,maslinovo ulje,orig",
+        "kolicine": "1 krastavac, 2 paradajza, 1 crni luk, 1/2 šolje maslinki, 100g feta sira, 2 kašike maslinovog ulja, masline i origano po ukusu",
+        "kalorije": "300",
+        "vrijeme": "15",
+        "kategorija": "ljetna"
+    },
+    {
+        "id": "3",
+        "ime": "Caprese salata",
+        "slika": "caprese.jpg",
+        "opis": "1. Isecite redom paradajz, bufalo mocarelu i sveže bosiljak listove na tanke kriške.\r\n\r\n   2. Redom aranžirajte na tanjir i pospite sa balzamikom i maslinovim uljem.\r\n\r\n   3. Posolite i pobiberite po ukusu.\r\n\r\nCaprese salata je sada spremna za serviranje! Uživajte u njenom osvežavajućem ukusu.",
+        "sastojci": "paradajz,mocarela,bosiljak,balzamiko,maslinovo ulje",
+        "kolicine": "2 paradajza, 200g bufalo mocarele, sveži bosiljak, 2 kašike balzamika, 2 kašike maslinovog ulja",
+        "kalorije": "250",
+        "vrijeme": "10",
+        "kategorija": "ljetna"
+    },
+    {
+        "id": "4",
+        "ime": "Šopska salata",
+        "slika": "sopska.jpg",
+        "opis": "1. Isecite sveži krastavac, paradajz i crni luk na male kocke i stavite ih u činiju.\r\n\r\n   2. Dodajte malo kajmaka i pospite sa soli i suvom mentom.\r\n\r\n   3. Prelijte sa malo vinaigrette-a i promešajte.\r\n\r\nŠopska salata je sada spremna za serviranje! Uživajte u ovoj tradicionalnoj makedonskoj salati.",
+        "sastojci": "krastavac,paradajz,crni luk,kajmak,so,menta",
+        "kolicine": "1 krastavac, 2 paradajza,1 crni luk, 100g kajmaka, so, suva menta",
+        "kalorije": "200",
+        "vrijeme": "15",
+        "kategorija": "regionalno"
+    },
+    {
+        "id": "5",
+        "ime": "Veganska francuska salata",
+        "slika": "vegfranc.jpg",
+        "opis": "1.\r\n\r\nSkuhati  Ledo povrće za francusku salatu prema uputama.  Te pustiti da se potpuno ohladi. (mrkva, grašak, krompir) \r\n2.\r\n\r\nDok se Ledo povrće za francusku salatu hladi, narezati kisele krastavce u male kocke, da su slične veličine kao i povrće za francusku salatu. \r\n3.\r\n\r\nU jednu veču zdjelu, pomiješati kisele krastavce i ohlađeno Ledo povrće za francusku salatu. \r\n4.\r\n\r\nZatim u istu zdjelu dodajte cijelu tubu Omegol majoneze (ili manje zavisi koliko volite majoneze u francuskoj salati). \r\n\r\nDodatno malo zasolite \r\n5.\r\n\r\nAko volite kiselije, dodajte 1 kašiku domaćeg jabučnog sirćeta. \r\n6.\r\n\r\nOstavite da se par sati dodatno hladi u frižderu, prije posluživanje dobro promiješati. ",
+        "sastojci": "smrznuto povrće,kiseli krastavac,vegan majonez,sol,sirće",
+        "kolicine": "450 g Ledo povrće za francusku salatu\r\n6 - 8 komada kiseli krastavaca\r\n165 g Zvijezda Omegol majoneza (VEGAN) ili neku drugu vegan majonezu\r\nprstohvat sol\r\n1 žlica Domaći jabučni ocat (nije obavezno)",
+        "kalorije": "300",
+        "vrijeme": "30",
+        "kategorija": "posno"
+    },
+    {
+        "id": "6",
+        "ime": "Portugalska salata",
+        "slika": "portugalska.jpg",
+        "opis": "1.\r\n\r\nPiletinu narežite na kockice i začinite začinom za pečenu piletinu, te popržite na tavi s malo ulja.\r\n2.\r\n\r\nTjesteninu skuhajte u slanoj vodi, a povrće narežite na kockice. Još toplo meso i tjesteninu pomiješajte, dodajte povrće.\r\n3.\r\n\r\nUmiješajte sve sastojke za dressing, dobro promiješajte dok ne dobijete gladak umak, umiješajte začine (bosiljak, origano, sol, papar) i prelijte po salati, sve dobro promiješajte, te ostavite da odstoji u frižideru cca 1 sat.",
+        "sastojci": "piletina,paprika,paradajz,kiselo vrhnje,majoneza,bosiljak,origan",
+        "kolicine": "250 gr šarene tjestenine\r\n1 kom pilećih prsa\r\n1 kom zelene paprike\r\n2 kom paradajza\r\nzačin za pečenu piletinu\r\nDressing\r\n1/2 kiselog vrhnja\r\n1/2 vrećice majoneze\r\norigano\r\nbosiljak\r\nsol\r\nbiber",
+        "kalorije": "370",
+        "vrijeme": "20",
+        "kategorija": "tjestenina"
+    },
+    {
+        "id": "7",
+        "ime": "Francuska salata",
+        "slika": "francuska.jpg",
+        "opis": "1.\r\n\r\nZamrznutu mješavinu povrća stavite u kipuću posoljenu vodu, a kad ponovo zakipi, kuhajte 10 minuta.\r\n2.\r\n\r\nKuhano povrće ocijedite i ohladite.\r\n3.\r\n\r\nMajonezu pomiješajte sa senfom, vrhnjem, morskom soli i crnim biberom. Dodajte ohlađenom povrću, zatim dodajte sitno narezane krastavce i sve zajedno lagano promiješajte.\r\n4.\r\n\r\nDodajte krastavce i sve zajedno lagano promiješajte.",
+        "sastojci": "smrznuto povrće,kiseli krastavac,majoneza,senf,kiselo vrhnje,bib",
+        "kolicine": "450 g smrznutog povrća za francusku salatu\r\nsol\r\n50 g kiselih krastavaca \r\n90 g majoneze\r\n1 kašikica senfa \r\n200 ml kiselog vrhnja\r\nbiber",
+        "kalorije": "280",
+        "vrijeme": "40",
+        "kategorija": "ljetna"
+    },
+    {
+        "id": "8",
+        "ime": "Salata sa tunjevinom",
+        "slika": "tuna.jpg",
+        "opis": "    U velikoj činiji, kombinujte tunjevinu, ohlađene testenine, crveni luk, crvenu papriku, krastavac i masline.\r\n\r\n    U maloj činiji za dresing, pomešajte maslinovo ulje, sok od limuna, belo vinsko sirće, senf i med (ako koristite). Dodajte so i biber po ukusu. Dobro promešajte da se svi sastojci sjedine.\r\n\r\n    Prelijte dresing preko sastojaka u činiji i pažljivo promešajte kako biste ravnomerno prekrili salatu dresingom.\r\n\r\n    Po želji, pospite seckanim peršunom ili korijanderom za dodatnu aromu i dekoraciju.\r\n\r\n    Ostavite salatu u frižideru najmanje 30 minuta pre posluživanja kako bi se ukusi sjedinili.",
+        "sastojci": "tunjevina,tjestenina,crveni luk,paprika,krastavac,masline,persun",
+        "kolicine": "Sastojci:\r\n\r\n    2 konzerve tunjevine u vodi, dobro ocijeđene\r\n    2 šolje kuvane tjestenine (npr. penne ili spirale), ohlađene\r\n    1 crveni luk, sitno isjeckan\r\n    1 crvena paprika, isjeckana na kolutove\r\n    1/2 krastavca, isjeckanog na kolutove\r\n    1/4 šolje maslina (po ukusu)\r\n    1/4 šolje sjeckanog peršuna ili korijandera \r\n\r\nZa dresing:\r\n\r\n    1/4 šolje maslinovog ulja\r\n    2 kašike soka od limuna\r\n    1 kašika bijelog vinskog sirćeta\r\n    1 kašika senfa\r\n    1 kašičica meda (opciono)\r\n    So i biber po ukusu",
+        "kalorije": "500",
+        "vrijeme": "25",
+        "kategorija": "tunjevina"
+    },
+    {
+        "id": "9",
+        "ime": "Salata sa avokadom",
+        "slika": "avokado.jpg",
+        "opis": "    Prvo pripremite pileće filete tako što ćete ih posoliti i pobiberiti po ukusu. Zagrijte malo maslinovog ulja u tiganju na srednje jakoj vatri, a zatim pržite pileće filete sa svake strane dok ne postanu zlatno smeđi i potpuno skuvani (oko 5-7 minuta sa svake strane). Kada su gotovi, ostavite ih da se ohlade nekoliko minuta, a zatim nasjeckajte na tanke trake.\r\n\r\n    U velikoj činiji, kombinujte miksane zelene salate, kriške avokada, tanko seckani crveni luk, kriške paradajza, seckani peršun ili korijander, i orašaste plodove.\r\n\r\n    U maloj činiji za dresing, pomešajte maslinovo ulje, sok od limuna, med, senf, so i biber. Dobro promešajte sve sastojke dok ne dobijete homogenu smesu.\r\n\r\n    Prelite salatu pripremljenim dresingom i pažljivo promešajte kako biste ravnomerno prekrili salatu dresingom.\r\n\r\n    Na vrh salate stavite nasjeckane pileće trake.\r\n\r\n    Poslužite salatu odmah i uživajte!",
+        "sastojci": "piletina,zelena salata,avokado,crveni luk,paradajz,persun,bademi",
+        "kolicine": "Za salatu:\r\n\r\n    2 pileća fileta (oko 200g svaki)\r\n    4 šolje miksane zelene salate (možete koristiti različite vrste, kao što su rukola, baby spanać, zelena salata)\r\n    1 avokado, isječen na kriške\r\n    1/2 crvenog luka, tanko isječenog\r\n    1 paradajz, isječen na kriške\r\n    1/4 šolje sjeckanog svježeg peršuna ili korijandera\r\n    1/4 šolje sjeckanih orašastih plodova (npr. bademi, orasi, ili pistaći)\r\n\r\nZa dresing:\r\n\r\n    3 kašike maslinovog ulja\r\n    2 kašike soka od limuna\r\n    1 kašika meda\r\n    1/2 kašičice senfa\r\n    So i biber po ukusu",
+        "kalorije": "750",
+        "vrijeme": "30",
+        "kategorija": "piletina"
+    },
+    {
+        "id": "10",
+        "ime": "Salata sa graskom i tunom",
+        "slika": "tunjevina.jpg",
+        "opis": "    U velikoj činiji, kombinujte ocijeđenu tunjevinu, kuvani grašak, iseckani crveni luk i seckani peršun.\r\n\r\n    U maloj činiji, pripremite dresing tako što ćete pomešati majonezu i kiselu pavlaku. Dodajte so i biber po ukusu i dobro promešajte.\r\n\r\n    Prelite salatu pripremljenim dresingom i pažljivo promešajte kako biste ravnomerno prekrili salatu dresingom.\r\n\r\n    Ostavite salatu u frižideru najmanje 30 minuta pre posluživanja kako bi se ukusi sjedinili.",
+        "sastojci": "tunjevina,grasak,crveni luk,persun,majoneza,pavlaka",
+        "kolicine": "    2 konzerve tunjevine u vodi, dobro ocijeđene\r\n    2 šolje kuvanog graška (možete koristiti smrznuti grašak i skuvati ga prema uputstvu na pakovanju)\r\n    1 crveni luk, sitno isjeckan\r\n    1/4 šolje sjeckanog svežeg peršuna\r\n    1/4 šolje majoneze\r\n    2 kašike kisele pavlake\r\n    So i biber po ukusu",
+        "kalorije": "400",
+        "vrijeme": "30",
+        "kategorija": "tunjevina"
+    }
+]
 }

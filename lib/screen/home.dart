@@ -108,6 +108,7 @@ class _HomeState extends State<Home> {
                               color: font,
                               fontFamily: 'ro',
                             ),
+                            textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 10),
                           Row(

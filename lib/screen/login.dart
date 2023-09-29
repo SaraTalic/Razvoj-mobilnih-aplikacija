@@ -176,8 +176,8 @@ class Login extends StatelessWidget {
                 child: TextField(
                   controller: usernameControllerL,
                   decoration: InputDecoration(
-                    icon: Icon(Icons.email),
-                    hintText: 'Email',
+                    icon: Icon(Icons.person),
+                    hintText: 'Korisničko ime ili email',
                     hintStyle: TextStyle(fontFamily: 'ro'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),

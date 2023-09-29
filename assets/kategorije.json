@@ -8,6 +8,15 @@
         },
         {
             "kategorija": "regionalno"
+        },
+        {
+            "kategorija": "posno"
+        },
+        {
+            "kategorija": "tjestenina"
+        },
+        {
+            "kategorija": "tunjevina"
         }
     ]
 }

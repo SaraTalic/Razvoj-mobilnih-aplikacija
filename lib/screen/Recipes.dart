@@ -43,6 +43,7 @@ class _RecipesState extends State<Recipes> {
       backgroundColor: background,
       appBar: AppBar(
         title: Text(''),
+        backgroundColor: maincolor,
       ),
       body: CustomScrollView(
         slivers: [
@@ -118,6 +119,7 @@ class _RecipesState extends State<Recipes> {
                               color: font,
                               fontFamily: 'ro',
                             ),
+                            textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 10),
                           Row(

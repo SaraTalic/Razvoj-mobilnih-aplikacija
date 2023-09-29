@@ -152,6 +152,7 @@ class _FavoriteState extends State<Favorite> {
                               color: font,
                               fontFamily: 'ro',
                             ),
+                            textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 10),
                           Row(
