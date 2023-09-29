@@ -70,7 +70,7 @@ class _NavigationState extends State<Navigation> {
                   });
                 },
                 child: Icon(
-                  Icons.favorite,
+                  Icons.star,
                   size: 27,
                   color: index == 3 ? maincolor : Colors.grey,
                 ),
