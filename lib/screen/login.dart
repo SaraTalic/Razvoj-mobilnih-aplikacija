@@ -59,7 +59,17 @@ class Login extends StatelessWidget {
         textColor: Colors.white,
         fontSize: 16.0,
       );
-    } else {
+    }else if (data == "MissingFields") {
+      Fluttertoast.showToast(
+        msg: "Morate popuniti sva polja.",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      ); }
+    else {
       Fluttertoast.showToast(
         msg: "Registracija nije uspjela. ",
         toastLength: Toast.LENGTH_SHORT,
@@ -122,7 +132,7 @@ class Login extends StatelessWidget {
       );
     } else if (data == "MissingFields") {
       Fluttertoast.showToast(
-        msg: "fali.",
+        msg: "Neko polje je prazno.",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,

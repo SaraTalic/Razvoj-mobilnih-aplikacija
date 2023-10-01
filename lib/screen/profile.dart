@@ -17,12 +17,7 @@ class Profil extends StatelessWidget {
           title: Text('Odjava'),
           content: Text('Da li ste sigurni da želite da se odjavite?'),
           actions: <Widget>[
-            TextButton(
-              child: Text('Ne'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
+            
             TextButton(
               child: Text('Da'),
               onPressed: () {
@@ -34,6 +29,12 @@ class Profil extends StatelessWidget {
                     builder: (BuildContext context) => Login(),
                   ),
                 );
+              },
+            ),
+            TextButton(
+              child: Text('Ne'),
+              onPressed: () {
+                Navigator.of(context).pop();
               },
             ),
           ],

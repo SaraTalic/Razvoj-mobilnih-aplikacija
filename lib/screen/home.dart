@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int indexx = 1;
+  
   List<dynamic> food = [];
 
   Future<List<dynamic>> loadSalads() async {

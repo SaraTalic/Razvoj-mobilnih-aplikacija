@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(
       ChangeNotifierProvider(
-      create: (context) => UserProvider(), // Dodajte ovu liniju za pravljenje UserProvider
+      create: (context) => UserProvider(), 
       child: const MyApp(),
     ),);
 }
